@@ -1,9 +1,0 @@
-dependencies:
-- name: gpu-operator
-  repository: https://helm.ngc.nvidia.com/nvidia
-  version: v25.3.2
-- name: network-operator
-  repository: https://helm.ngc.nvidia.com/nvidia
-  version: 25.7.0
-digest: sha256:ddc6e5c41cc8452d938dbac6d4be8585900b4c03521766fd4860dcbf4cf0ad87
-generated: "2025-09-02T16:03:59.357889625-04:00"
