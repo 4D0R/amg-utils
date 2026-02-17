@@ -623,10 +623,10 @@ func runHostConfigCufile(outputPath string) error {
 	fmt.Println("✅ Successfully parsed source cufile.json")
 
 	// Get InfiniBand UP IP addresses
-	fmt.Println("🔍 Detecting InfiniBand network interfaces...")
+	fmt.Println("🔍 Detecting RDMA network interfaces...")
 	ibInterfaces, err := hardware.GetInfiniBandNetworkInterfaces()
 	if err != nil {
-		return fmt.Errorf("failed to get InfiniBand interfaces: %w", err)
+		return fmt.Errorf("failed to get RDMA interfaces: %w", err)
 	}
 
 	var upIPs []string
@@ -643,9 +643,9 @@ func runHostConfigCufile(outputPath string) error {
 	}
 
 	if len(upIPs) == 0 {
-		fmt.Println("⚠️  No UP InfiniBand interfaces with IP addresses found")
+		fmt.Println("⚠️  No UP RDMA interfaces with IP addresses found")
 	} else {
-		fmt.Printf("✅ Found %d UP InfiniBand interfaces: %v\n", len(upIPs), upIPs)
+		fmt.Printf("✅ Found %d UP RDMA interfaces: %v\n", len(upIPs), upIPs)
 	}
 
 	// Configure the values according to requirements
@@ -921,10 +921,10 @@ func runHostGdsSetup(configDir string, preFlight bool, bareSetup bool) error {
 	fmt.Println("✅ Successfully parsed source cufile.json")
 
 	// Get InfiniBand UP IP addresses
-	fmt.Println("🔍 Detecting InfiniBand network interfaces...")
+	fmt.Println("🔍 Detecting RDMA network interfaces...")
 	ibInterfaces, err := hardware.GetInfiniBandNetworkInterfaces()
 	if err != nil {
-		return fmt.Errorf("failed to get InfiniBand interfaces: %w", err)
+		return fmt.Errorf("failed to get RDMA interfaces: %w", err)
 	}
 
 	var upIPs []string
@@ -941,9 +941,9 @@ func runHostGdsSetup(configDir string, preFlight bool, bareSetup bool) error {
 	}
 
 	if len(upIPs) == 0 {
-		fmt.Println("⚠️  No UP InfiniBand interfaces with IP addresses found")
+		fmt.Println("⚠️  No UP RDMA interfaces with IP addresses found")
 	} else {
-		fmt.Printf("✅ Found %d UP InfiniBand interfaces: %v\n", len(upIPs), upIPs)
+		fmt.Printf("✅ Found %d UP RDMA interfaces: %v\n", len(upIPs), upIPs)
 	}
 
 	// Configure the values according to requirements
